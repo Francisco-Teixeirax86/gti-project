@@ -1,0 +1,34 @@
+<Schema name="databaseB_dw">
+  <Cube name="energy_consumption_cube" visible="true" description="energy_consumption_cube" cache="true" enabled="true">
+    <Table name="fact_energy_consumption">
+    </Table>
+    <Dimension type="TimeDimension" visible="true" foreignKey="TIME_ID" name="dim_time">
+      <Hierarchy name="Time Hierarchy" visible="true" hasAll="true" allMemberName="All Time" primaryKey="TIME_ID">
+        <Table name="dim_time">
+        </Table>
+        <Level name="YEAR" visible="true" column="YEAR" type="Numeric" uniqueMembers="false" levelType="TimeYears">
+        </Level>
+        <Level name="MONTH" visible="true" column="MONTH" type="Numeric" uniqueMembers="false" levelType="TimeMonths">
+        </Level>
+        <Level name="SEASON" visible="true" column="SEASON" type="String" uniqueMembers="false" levelType="TimeUndefined">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="LOCATION_ID" name="dim_location">
+      <Hierarchy name="Location Hierarchy" visible="true" hasAll="true" allMemberName="All Location" primaryKey="LOCATION_ID">
+        <Table name="dim_location">
+        </Table>
+        <Level name="REGION" visible="true" column="REGION" type="String" uniqueMembers="false" levelType="Regular">
+        </Level>
+        <Level name="MUNICIPALITY" visible="true" column="MUNICIPALITY" type="String" uniqueMembers="false" levelType="Regular">
+        </Level>
+        <Level name="PARISH" visible="true" column="PARISH" type="String" uniqueMembers="false" levelType="Regular">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Measure name="Energy_Consumption" column="ENERGY_CONSUMPTION_KWH" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="Percentage_of_Smart_Meters" column="PERCENTAGE_SMART_METERS" aggregator="distinct-count" visible="true">
+    </Measure>
+  </Cube>
+</Schema>
