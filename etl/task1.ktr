@@ -493,16 +493,16 @@
     </hop>
     <hop>
       <from>Modified JavaScript value</from>
-      <to>Sort rows 4</to>
+      <to>Sort rows DB_A</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Sort rows 4</from>
-      <to>Group by 2</to>
+      <from>Sort rows DB_A</from>
+      <to>Group by DB_A</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Group by 2</from>
+      <from>Group by DB_A</from>
       <to>Formula</to>
       <enabled>Y</enabled>
     </hop>
@@ -726,7 +726,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>912</xloc>
+      <xloc>992</xloc>
       <yloc>272</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1230,7 +1230,7 @@
     </GUI>
   </step>
   <step>
-    <name>Sort rows 4</name>
+    <name>Sort rows DB_A</name>
     <type>SortRows</type>
     <description/>
     <distribute>Y</distribute>
@@ -1266,13 +1266,13 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>704</xloc>
+      <xloc>720</xloc>
       <yloc>272</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Group by 2</name>
+    <name>Group by DB_A</name>
     <type>GroupBy</type>
     <description/>
     <distribute>Y</distribute>
@@ -1318,7 +1318,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>800</xloc>
+      <xloc>848</xloc>
       <yloc>272</yloc>
       <draw>Y</draw>
     </GUI>
